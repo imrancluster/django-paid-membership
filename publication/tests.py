@@ -1,3 +1,8 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class MyPublicationTests(TestCase):
+    def test_home(self):
+        response = self.client.get('http://localhost:8087')
+        self.assertEqual(response.status_code, 200)
+
